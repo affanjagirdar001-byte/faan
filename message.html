@@ -1,0 +1,147 @@
+message.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Tejaswini</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family: 'Segoe UI', sans-serif;
+
+    background:
+    linear-gradient(rgba(20,0,20,0.55), rgba(60,0,40,0.65)),
+    url("tejaswini.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* Glass box */
+.main-box{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,0,150,0.3);
+    text-align:center;
+}
+
+/* Romantic Text */
+#question{
+    font-size:28px;
+    color:white;
+    font-weight:600;
+    letter-spacing:1px;
+    text-shadow:
+    0 0 10px rgba(255,100,200,0.8),
+    0 0 20px rgba(255,0,150,0.6);
+}
+
+/* Buttons */
+button{
+    padding:14px 32px;
+    margin:15px;
+    border-radius:30px;
+    border:none;
+    font-size:18px;
+    cursor:pointer;
+    color:white;
+    background: linear-gradient(45deg,#ff4da6,#ff1a75);
+    box-shadow:0 0 20px rgba(255,0,150,0.5);
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* GIF hidden first */
+#celebration{
+    display:none;
+    margin-top:20px;
+}
+
+#celebration img{
+    width:250px;
+    border-radius:15px;
+}
+
+/* Result Text */
+#resultText{
+    display:none;
+    color:white;
+    font-size:26px;
+    margin-top:20px;
+}
+
+/* No Button Floating */
+#noBtn{
+    position:absolute;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main-box">
+
+<div id="question">
+WILL YOU MARRY ME 💫
+</div>
+
+<br>
+
+<button onclick="yesClick()">Yes 💖</button>
+<button id="noBtn">No 🙃</button>
+
+<div id="celebration">
+<img src="celebration.gif">
+</div>
+
+<div id="resultText">
+✨ ✨ ✨ ✨ ✨✨ <br>
+ MODEL SHINDE <br>
+ 💖💖💖 <br>
+ JAHAGIRDAR
+✨🌸🌸🌸✨
+</div>
+
+</div>
+
+<script>
+
+/* YES CLICK */
+function yesClick(){
+    document.getElementById("question").style.display="none";
+    document.getElementById("noBtn").style.display="none";
+    document.querySelector("button").style.display="none";
+
+    document.getElementById("celebration").style.display="block";
+    document.getElementById("resultText").style.display="block";
+}
+
+/* NO BUTTON FLOAT FULL SCREEN */
+let noBtn=document.getElementById("noBtn");
+
+function moveNo(){
+    let x=Math.random()*(window.innerWidth-100);
+    let y=Math.random()*(window.innerHeight-50);
+
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
+}
+
+setInterval(moveNo,200);
+
+</script>
+
+</body>
+</html>
